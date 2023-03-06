@@ -258,37 +258,49 @@ h6 {
   position: relative;
   display: flex;
   align-items: center;
+  flex: 0 0 24%;
+  background-color: #ffffff;
+  padding-left: 16px;
 }
-.header__form::before {
-  content: "";
-  position: absolute;
+.header__img-seach {
   width: 24px;
   height: 24px;
-  left: 24px;
-  top: 50%;
+  position: absolute;
   transform: translateY(-50%);
-  z-index: 10;
-  background: url("../img/icons/seach.svg");
+  top: 50%;
+  left: 0;
 }
 .header__seach {
+  flex: 1 1 auto;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.25;
   letter-spacing: 0.5px;
   color: #2F2F2F;
   border-radius: 4px;
-  max-width: 303px;
   position: relative;
   height: 53px;
 }
 .header__seach::placeholder {
-  padding-left: 51px;
+  padding-left: 26px;
+}
+.header__seach:focus + img {
+  display: none;
+}
+.header__seach:focus {
+  outline: none;
 }
 .header__button {
   padding: 9px 15px;
   background: #4E7D64;
   box-shadow: 0px 4px 20px rgba(78, 125, 100, 0.08);
   border-radius: 5px;
+  width: 64px;
+  height: 53px;
+}
+
+.header__form:focus::before {
+  display: none;
 }
 
 @media (max-width: 1067px) {
@@ -613,11 +625,12 @@ h6 {
   background-color: white;
   border-radius: 20px;
   width: 285px;
-  height: 306px;
+  height: 321px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 32px;
+  padding-bottom: 22px;
 }
 .products__text {
   font-size: 30px;
@@ -628,6 +641,7 @@ h6 {
 @media (max-width: 1750px) {
   .products__info {
     text-align: center;
+    padding-bottom: 16px;
   }
 }
 
@@ -738,6 +752,14 @@ h6 {
   background-color: #FBFAF3;
   z-index: -1;
 }
+.choice__advert {
+  font-size: 300px;
+}
+@media (max-width: 47.99875em) {
+  .choice__advert {
+    font-size: 172px;
+  }
+}
 .choice__image {
   max-width: 686px;
   position: relative;
@@ -758,13 +780,14 @@ h6 {
   gap: 67px;
   background-color: #FBFAF3;
   max-width: 474px;
+  width: 100%;
   height: 111px;
   padding: 10px 28px;
   margin-bottom: 26px;
 }
-@media (max-width: 528px) {
+@media (max-width: 472px) {
   .choice__full-date {
-    gap: 20px;
+    gap: 40px;
   }
 }
 .choice__days::before {
@@ -863,15 +886,9 @@ h6 {
 
 .advert span {
   font-weight: 600;
-  font-size: 300px;
   line-height: 1.2;
   color: white;
   text-shadow: -2px -2px 0 #4E7D64, 2px -2px 0 #4E7D64, -2px 2px 0 #4E7D64, 2px 2px 0 #4E7D64;
-}
-@media (max-width: 47.99875em) {
-  .advert span {
-    font-size: 172px;
-  }
 }
 
 .shop {
@@ -1352,7 +1369,7 @@ h6 {
 @media (max-width: 660px) {
   .subscribe__email {
     width: 300px;
-    padding: 0;
+    padding: 20px;
   }
 }
 .subscribe__email::placeholder {
@@ -1370,4 +1387,9 @@ h6 {
   color: #FFFFFF;
   padding: 21px 24px;
   background-color: #4E7D64;
+}
+.subscribe__button:hover {
+  background-color: #FFFFFF;
+  color: #4E7D64;
+  outline: 3px solid #4E7D64;
 }
